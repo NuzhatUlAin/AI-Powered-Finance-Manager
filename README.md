@@ -11,6 +11,20 @@ A React Native mobile app that helps you track expenses, manage budgets, and get
 - **Statistics & Trends** - Detailed category breakdown
 - **Local Storage** - All data stored securely on your device using AsyncStorage
 
+## Screenshots
+
+<div align="center">
+
+| Home                                                                            | Settings                                                                      | Create Category                                                                     | Category Added                                                                     |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| <img src="./assets/HomeScreen1.png" width="300" style="border-radius: 20px;" /> | <img src="./assets/Settings2.png" width="300" style="border-radius: 20px;" /> | <img src="./assets/CreateCategory3.png" width="300" style="border-radius: 20px;" /> | <img src="./assets/CategoryAdded4.png" width="300" style="border-radius: 20px;" /> |
+
+| Empty Category                                                               | Add Expense                                                                     | Expense Added                                                                  | Statistics                                                                      |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| <img src="./assets/NoItems5.png" width="300" style="border-radius: 20px;" /> | <img src="./assets/CreateItem6.png" width="300" style="border-radius: 20px;" /> | <img src="./assets/ItemAdded7.png" width="300" style="border-radius: 20px;" /> | <img src="./assets/Statistics8.png" width="300" style="border-radius: 20px;" /> |
+
+</div>
+
 ## Tech Stack
 
 - **React Native** with Expo 54
