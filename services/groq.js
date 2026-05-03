@@ -35,9 +35,13 @@ export const generateInsight = async (data, retryCount = 0) => {
 
     const { name, month, totalBudget, totalSpent, categories = [] } = data;
 
+    // Format categories safely - handle both with and without limit field
     const categoryDetails = categories
-      .map(cat => `${cat.name}: ${cat.spent}/${cat.limit}`)
-      .join(', ');
+      .filter(cat => cat && cat.spent > 0) // Only include categories with spending
+      .map(cat => cat.limit 
+        ? `${cat.name}: ${cat.spent}/${cat.limit}` 
+        : `${cat.name}: ${cat.spent}`)
+      .join(', ') || 'No category breakdown available';
 
     const userMessage = `
 Hello! Here's my budget snapshot for ${month}:
@@ -60,8 +64,7 @@ Give me a warm, supportive one-liner about my spending.
         messages: [
           {
             role: 'system',
-            content: `You are a budget planner. Given the data flag if 60% budget used and how much remains. praise if over 60% of budget remains. one line. no emojies.`,
-          },
+            content: `You are a financial assistant. Speak in second person. In 2 concise sentences: first, highlight your top spending categories (if given); second, warn softly if 60%+ of your budget is spent and state the remainder, or praise if under 40% is spent. No emojis. Use exact numbers.`,          },
           {
             role: 'user',
             content: userMessage,
